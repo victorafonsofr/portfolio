@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="victor afonso">
+    <title>Victor Afonso | Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="typing-effect">>. victor afonso</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2> Victor Afonso
+</h2>
+            <p>C • Java • Javascript • SQL • redes • Python</p>
+            <p>graduando em Sistemas de Informação pela UFU</p>
+            <a href="#portfolio" class="cta-button">Ver Meus Projetos</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h3>Projetos em Destaque</h3>
+            <div class="projeto-grid">
+                <div class="projeto-card">
+                    <img src="placeholder-1.jpg" alt="Imagem do Projeto 1">
+                    <h4>Projeto de App Financeiro</h4>
+                    <p>Design de um aplicativo mobile para gestão de finanças pessoais.</p>
+                    <a href="#">Ver Estudo de Caso →</a>
+                </div>
+                <div class="projeto-card">
+                    <img src="placeholder-2.jpg" alt="Imagem do Projeto 2">
+                    <h4>Website para E-commerce</h4>
+                    <p>Desenvolvimento Front-end de uma loja virtual de calçados.</p>
+                    <a href="#">Ver Estudo de Caso →</a>
+                </div>
+                </div>
+        </div>
+    </section>
+    
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h3>Sobre Mim</h3>
+            <p>Sou [Sua Profissão] com X anos de experiência. Minha missão é [Sua Missão]. Trabalho com [Suas Habilidades Chave].</p>
+            <a href="#" onclick="baixarPDF()" class="cta-button secondary">Baixar CV</a>
+        </div>
+    </section>
+
+
+    <footer id="contato">
+        <div class="container">
+            <p>&copy; 2026 Victor Afonso.</p>
+            <p>victorafernandes28@gmail.com</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/victorafonsofr/"><i class="fa fa-linkedin" style="font-size:36px; color:white"></i></a> 
+                <a href="https://github.com/victorafonsofr"><i class="fa fa-github" style="font-size:36px"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function baixarPDF() {
+            const urlPDF = "cv.pdf"; 
+
+            const a = document.createElement('a');
+            a.href = urlPDF;
+            a.download = 'cv.pdf'; 
+            
+            document.body.appendChild(a);
+            a.click();
+            
+            document.body.removeChild(a);
+            }
+    </script>
+</body>
+</html>
