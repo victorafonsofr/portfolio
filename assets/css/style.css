@@ -130,6 +130,19 @@ header nav ul li a:hover {
     margin-bottom: 10px;
 }
 
+
+.profilepic {
+    width: 180px;
+    height: 180px;
+    background-image: url('../icons/ChatGPT\ Image.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    border: 4px solid var(--cor-principal);
+    box-shadow: 0 0 15px var(--cor-principal);
+}
+
 /* SEÇÕES GERAIS */
 section {
     padding: 60px 0;
