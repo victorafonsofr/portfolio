@@ -6,7 +6,7 @@
     font-family: "Roboto",sans-serif;
 }
 :root {
-    --cor-principal: #cb6ceb; /* Azul para destaque */
+    --cor-principal: #cb6ceb; /* Roxo para destaque */
     --cor-secundaria: white; /* Texto */
     --cor-fundo: #262627; /* Fundo claro */
     --cor-fundo-escuro: #2b2a2a; /* Fundo de seção */
@@ -19,6 +19,14 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-secundaria);
     scroll-behavior: smooth;
+}
+
+.bright-mode{
+    --cor-principal: #9c3fc0;       /* Roxo mais escuro */
+    --cor-secundaria: #222222;      /* Texto escuro */
+    --cor-fundo: #ffffff;           /* Fundo principal */
+    --cor-fundo-escuro: #f2f0f3;    /* Fundo de seção */
+    --cor-sombra: rgba(0, 0, 0, 0.12);
 }
 
 .container {
@@ -98,7 +106,7 @@ header nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background: #cb6ceb;
+    background: #8d34aa;
 }
 
 .secondary {
@@ -134,7 +142,7 @@ header nav ul li a:hover {
 .profilepic {
     width: 180px;
     height: 180px;
-    background-image: url('../icons/ChatGPT\ Image.png'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('../icons/profpic.png'); /* Substitua pelo caminho da sua imagem */
     background-size: cover;
     background-position: center;
     border-radius: 50%;
@@ -241,7 +249,60 @@ footer .social-links a, p {
     margin-left: 15px;
 }
 
-/* MEDIA QUERIES (RESPONSIVIDADE BÁSICA) */
+/* Interruptor de modo escuro*/
+
+.interruptor {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.interruptor input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #444;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Quando estiver ativado */
+.interruptor input:checked + .slider {
+    background-color: #cb6ceb;
+}
+
+.interruptor input:checked + .slider::before {
+    transform: translateX(30px);
+}
+
+.mode{
+    margin-top: 8px;
+}
+
+.imgmode{
+    height: 40px;
+    width: 40px;
+    margin-left: 8px;   
+    margin-top: 2px;
+}
+
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -259,6 +320,7 @@ footer .social-links a, p {
     .hero h2 {
         font-size: 2em;
     }
+    
     
     footer .container {
         flex-direction: column;

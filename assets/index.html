@@ -20,6 +20,13 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#contato">Contato</a></li>
+                    <li class="mode">
+                        <label class="interruptor">
+                           <input type="checkbox" id="tema">
+                            <span class="slider"></span>
+                        </label>
+                    </li>
+                    <li><img class="imgmode" src="icons/png_modo_noturno.png" alt="modo noturno"></li>
                 </ul>
             </nav>
         </div>
@@ -27,7 +34,6 @@
 
     <section id="inicio" class="hero">
         <div class="container">
-
             <div class="profilepic"></div>
 
             <h2> Victor Afonso</h2>
@@ -80,14 +86,15 @@
         function baixarPDF() {
             const urlPDF = "cv.pdf"; 
 
-            const a = document.createElement('a');
-            a.href = urlPDF;
-            a.download = 'cv.pdf'; 
-            
-            document.body.appendChild(a);
-            a.click();
-            
-            document.body.removeChild(a);
+                const a = document.createElement('a');
+                a.href = urlPDF;
+                a.download = 'cv.pdf'; 
+                
+                document.body.appendChild(a);
+                a.click();
+                
+                document.body.removeChild(a);
+
             }
     </script>
 </body>
