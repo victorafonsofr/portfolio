@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta author="victor afonso">
+    <meta name="author" content="Victor Afonso">
+    <meta name="description" content="Portfólio de Victor Afonso, graduando em Sistemas de Informação pela UFU: projetos em C, Java, Python, SQL e cibersegurança.">
+    <meta name="theme-color" content="#262627">
     <title>Victor Afonso | Portfólio</title>
+
+    <script>
+        (function () {
+            try {
+                var salvo = localStorage.getItem('tema');
+                var claro = salvo ? salvo === 'claro'
+                                  : window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (claro) document.documentElement.classList.add('bright-mode');
+            } catch (e) {}
+        })();
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="icons/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
 
@@ -21,11 +34,12 @@
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#contato">Contato</a></li>
                     <li class="mode">
-                        <label class="interruptor">
-                           <input type="checkbox" id="tema">
+                        <label class="interruptor" title="Alternar modo claro/escuro">
+                            <input type="checkbox" id="tema" aria-label="Ativar modo claro">
                             <span class="slider"></span>
                         </label>
                     </li>
+                    <li><img class="imgmode" src="icons/png_modo_noturno.png" alt="" aria-hidden="true"></li>
                 </ul>
             </nav>
         </div>
@@ -46,55 +60,82 @@
         <div class="container">
             <h3>Projetos em Destaque</h3>
             <div class="projeto-grid">
-                <div class="projeto-card">
-                    <img src="placeholder-1.jpg" alt="Imagem do Projeto 1">
-                    <h4>Projeto de App Financeiro</h4>
-                    <p>Design de um aplicativo mobile para gestão de finanças pessoais.</p>
-                    <a href="#">Ver Estudo de Caso →</a>
-                </div>
-                <div class="projeto-card">
-                    <img src="placeholder-2.jpg" alt="Imagem do Projeto 2">
-                    <h4>Website para E-commerce</h4>
-                    <p>Desenvolvimento Front-end de uma loja virtual de calçados.</p>
-                    <a href="#">Ver Estudo de Caso →</a>
-                </div>
-                </div>
+
+                <article class="projeto-card">
+                    <div class="projeto-thumb" aria-hidden="true"><img src="icons/syshospital.png" alt="SysHospital"></div>
+                    <h4>SysHospital</h4>
+                    <p>Sistema de gestão hospitalar em C, executado no terminal. Integra lista encadeada, lista duplamente encadeada, lista circular, fila e pilha (desfazer ações).</p>
+                    <ul class="tags"><li>C</li><li>Estrutura de Dados</li><li>GCC</li></ul>
+                    <a href="https://github.com/victorafonsofr/SysHospital" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-thumb" aria-hidden="true"><img src="icons/esca.png" alt="escalonamento"></div>
+                    <h4>Algoritmos de Escalonamento de Tarefas</h4>
+                    <p>Simulador em Python de escalonamento de processos (Shortest Job First e Prioridade com preempção), com diagrama de tempo no terminal e cálculo das médias.</p>
+                    <ul class="tags"><li>Python</li><li>Algoritmos</li></ul>
+                    <a href="https://github.com/victorafonsofr/Algoritmos_Escalonamento_de_Tarefas" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-thumb" aria-hidden="true"><i class="fa fa-suitcase"></i></div>
+                    <h4>WAGH</h4>
+                    <p>Aplicação web em Java (JSP) com camadas Model e DAO e banco de dados SQL, para cadastro e consulta de clientes, cidades, pacotes, hospedagens e ofertas.</p>
+                    <ul class="tags"><li>Java</li><li>JSP</li><li>SQL</li><li>SpringBoot</li></ul>
+                    <a href="https://github.com/victorafonsofr/WAGH" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
+                </article>
+
+                <article class="projeto-card">
+                    <div class="projeto-thumb" aria-hidden="true"><i class="fa fa-shield"></i></div>
+                    <h4>Landing Page NuSec</h4>
+                    <p>Landing page do Núcleo de Segurança Cibernética (NuSec) da FACOM/UFU, com apresentação, objetivos, projetos de extensão e chamada para novos membros.</p>
+                    <ul class="tags"><li>HTML</li><li>CSS</li><li>Cibersegurança</li></ul>
+                    <a href="https://github.com/victorafonsofr/Landing-Page-NuSec" target="_blank" rel="noopener noreferrer">Ver no GitHub →</a>
+                </article>
+
+            </div>
         </div>
     </section>
-    
+
     <section id="sobre" class="sobre">
         <div class="container">
             <h3>Sobre Mim</h3>
             <p>Atualmente sou estudante de Sistemas de Informação e técnico em Desenvolvimento de Sistemas pelo IFTM. Minha trajetória na tecnologia começou cedo com a linguagem C, evoluindo para um forte interesse em infraestrutura de TI, redes, cibersegurança e desenvolvimento. Busco oportunidades para aplicar meus conhecimentos técnicos na resolução de problemas no mercado de trabalho.</p>
-            <a href="#" onclick="baixarPDF()" class="cta-button secondary">Baixar CV</a>
+            <a href="cv.pdf" download="cv.pdf" class="cta-button secondary">Baixar CV</a>
         </div>
     </section>
-
 
     <footer id="contato">
         <div class="container">
             <p>&copy; 2026 Victor Afonso.</p>
             <p>victorafernandes28@gmail.com</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/victorafonsofr/"><i class="fa fa-linkedin" style="font-size:36px; color:white"></i></a> 
-                <a href="https://github.com/victorafonsofr"><i class="fa fa-github" style="font-size:36px"></i></a>
+                <a href="https://www.linkedin.com/in/victorafonsofr/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                <a href="https://github.com/victorafonsofr" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </footer>
+
     <script>
-        function baixarPDF() {
-            const urlPDF = "cv.pdf"; 
+        // Botão de tema: marcado = modo claro | desmarcado = modo escuro (padrão do site)
+        const interruptor = document.getElementById('tema');
+        const raiz = document.documentElement;
+        const metaTema = document.querySelector('meta[name="theme-color"]');
 
-                const a = document.createElement('a');
-                a.href = urlPDF;
-                a.download = 'cv.pdf'; 
-                
-                document.body.appendChild(a);
-                a.click();
-                
-                document.body.removeChild(a);
+        function aplicarTema(claro) {
+            raiz.classList.toggle('bright-mode', claro);
+            interruptor.checked = claro;
+            interruptor.setAttribute('aria-label', claro ? 'Ativar modo escuro' : 'Ativar modo claro');
+            metaTema.content = claro ? '#ffffff' : '#262627';
+        }
 
-            }
+        // sincroniza o botão com o tema já aplicado pelo script do <head>
+        aplicarTema(raiz.classList.contains('bright-mode'));
+
+        interruptor.addEventListener('change', () => {
+            aplicarTema(interruptor.checked);
+            try { localStorage.setItem('tema', interruptor.checked ? 'claro' : 'escuro'); } catch (e) {}
+        });
     </script>
 </body>
 </html>
